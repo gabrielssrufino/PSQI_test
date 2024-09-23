@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "ffdc9174-6517-44d7-86ff-74074e272b01",
+		"name": "Desafio Innera",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37034880"
+	},
+	"item": [
+		{
+			"name": "Autenticação",
+			"item": [
+				{
+					"name": "Verify email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"grufino1206@outlook.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/verify-email/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"verify-email",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoint para verificar se e-mail fornecido existe na base de dados, em caso afirmativo retorna o email, em caso negativo insere o email no bando de dados e o retorna posteriormente."
+		},
+		{
+			"name": "Forms",
+			"item": [
+				{
+					"name": "Send form",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"question1\": \"22:03\",\r\n    \"question2\": \"5\",\r\n    \"question3\": \"06:03\",\r\n    \"question4\": \"8\",\r\n    \"question5A\": \"opt-1-a\",\r\n    \"question5B\": \"opt-1-b\",\r\n    \"question5C\": \"opt-1-c\",\r\n    \"question5D\": \"opt-1-d\",\r\n    \"question5E\": \"opt-1-e\",\r\n    \"question5F\": \"opt-1-f\",\r\n    \"question5G\": \"opt-1-g\",\r\n    \"question5h\": \"opt-1-h\",\r\n    \"question5i\": \"opt-1-i\",\r\n    \"question5j\": \"opt-1-i\",\r\n    \"question5jTitle\": \"filho\",\r\n    \"question6\": \"6-a\",\r\n    \"question7\": \"7-a\",\r\n    \"question8\": \"8-c\",\r\n    \"question9\": \"9-b\",\r\n    \"user\": \"josiane@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/forms/send/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"forms",
+								"send",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List forms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/forms/list/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"forms",
+								"list",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints para enviar, filtrar e listar os formulários preeenchidos pelo usuário."
+		},
+		{
+			"name": "Results",
+			"item": [
+				{
+					"name": "GET user Results",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/results/list/?email={userEmail}",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"results",
+								"list",
+								""
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "{userEmail}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints para filtrar e listar os resultados obitidos por cada usuário."
+		}
+	]
+}

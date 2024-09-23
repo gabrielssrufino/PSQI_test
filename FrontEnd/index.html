@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUALIDADE DO SONO PITTSBURGH - INNERA HELTH</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <h1 class="title">CALCULADORA ÍNDICE DE QUALIDADE DO SONO</h1>
+
+    <div class="email">
+        <div class="line">
+            <svg viewBox="0 0 217 217" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1_3)">
+                <path d="M108.5 217C168.423 217 217 168.423 217 108.5C217 48.5771 168.423 0 108.5 0C48.5771 0 0 48.5771 0 108.5C0 168.423 48.5771 217 108.5 217Z" fill="#BB86FC"/>
+                <path d="M92.7554 96.5732V101.384L73.7993 132.094H92.9282V138H64.2349V133.362L83.2485 102.479H64.8975V96.5732H92.7554Z" fill="#C4BBBB"/>
+                <path d="M151.862 113.85V119.558L129.372 155.993H152.067V163H118.024V157.497L140.583 120.856H118.811V113.85H151.862Z" fill="#C4BBBB"/>
+                <path d="M137.424 55.7861V60.1079L120.396 87.6948H137.58V93H111.804V88.8335L128.884 61.0913H112.399V55.7861H137.424Z" fill="#C4BBBB"/>
+                <path d="M92.7554 91.5732V96.3843L73.7993 127.094H92.9282V133H64.2349V128.362L83.2485 97.479H64.8975V91.5732H92.7554Z" fill="white"/>
+                <path d="M151.862 108.85V114.558L129.372 150.993H152.067V158H118.024V152.497L140.583 115.856H118.811V108.85H151.862Z" fill="white"/>
+                <path d="M137.424 50.7861V55.1079L120.396 82.6948H137.58V88H111.804V83.8335L128.884 56.0913H112.399V50.7861H137.424Z" fill="white"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_1_3">
+                <rect width="217" height="217" fill="white"/>
+                </clipPath>
+                </defs>
+            </svg>
+            <h2>Informe seu e-mail</h2>
+        </div>
+
+        <div class="email-input">
+            <label for="email" class="text-email">E-mail:</label>
+            <input type="email" id="email" placeholder="Seu e-mail" name="email" class="input-email" required>
+        </div>
+
+        <button class="button" id="post_email">
+            Enviar
+            <div class="hoverEffect">
+                <div></div>
+            </div>
+        </button>
+    </div>
+
+    <div class="choices transparent">
+        <div class="line">
+            <svg viewBox="0 0 217 217" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1_3)">
+                <path d="M108.5 217C168.423 217 217 168.423 217 108.5C217 48.5771 168.423 0 108.5 0C48.5771 0 0 48.5771 0 108.5C0 168.423 48.5771 217 108.5 217Z" fill="#BB86FC"/>
+                <path d="M92.7554 96.5732V101.384L73.7993 132.094H92.9282V138H64.2349V133.362L83.2485 102.479H64.8975V96.5732H92.7554Z" fill="#C4BBBB"/>
+                <path d="M151.862 113.85V119.558L129.372 155.993H152.067V163H118.024V157.497L140.583 120.856H118.811V113.85H151.862Z" fill="#C4BBBB"/>
+                <path d="M137.424 55.7861V60.1079L120.396 87.6948H137.58V93H111.804V88.8335L128.884 61.0913H112.399V55.7861H137.424Z" fill="#C4BBBB"/>
+                <path d="M92.7554 91.5732V96.3843L73.7993 127.094H92.9282V133H64.2349V128.362L83.2485 97.479H64.8975V91.5732H92.7554Z" fill="white"/>
+                <path d="M151.862 108.85V114.558L129.372 150.993H152.067V158H118.024V152.497L140.583 115.856H118.811V108.85H151.862Z" fill="white"/>
+                <path d="M137.424 50.7861V55.1079L120.396 82.6948H137.58V88H111.804V83.8335L128.884 56.0913H112.399V50.7861H137.424Z" fill="white"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_1_3">
+                <rect width="217" height="217" fill="white"/>
+                </clipPath>
+                </defs>
+            </svg>
+            <h2>Escolha uma opção:</h2>
+        </div>
+
+        <button id="view">Vizualizar histórico</button>
+        <button id="newForm">Realizar novo cálculo</button>
+    </div>
+
+    <div class="form transparent">
+        <h1>QUESTIONÁRIO DE PITTSBURGH</h1>
+        <p class="advise">as respostas devem ser relativas aos seus hábitos de sono do último mês</p>
+
+        <form id="form1" class="formulario">
+
+            <div class="question">
+                <h1>1. Durante o último mês, quando você geralmente foi para a cama a noite?</h1>
+                <input type="time" id="sleep-hour">
+                <p class="advise">Hora usual de deitar</p>
+            </div>
+
+            <div class="question">
+                <h1>2. Durante o último mês, quanto tempo (em minutos) você geralmente levou para dormir a noite?</h1>
+                <input type="number" id="time-to-sleep">
+                <p class="advise">Tempo em minutos</p>
+            </div>
+
+            <div class="question">
+                <h1>3. Durante o último mês, quando você geralmente levantou de manhã?</h1>
+                <input type="time" id="wakeup-hour">
+                <p class="advise">Hora usual de levantar</p>
+            </div>
+
+            <div class="question">
+                <h1>4. Durante o último mês, quantas horas de sono você teve por noite? (Este pode ser diferente do número de horas que você ficou na cama) </h1>
+                <input type="number" id="slipping-time">
+                <p class="advise">Tempo em horas</p>
+            </div>
+
+        </form>
+
+        <form id="form2" class="formulario transparent">
+            <div class="question">
+                <h1>5. Durante o último mês, com que frequência você teve dificuldade para dormir porque você...</h1>
+        
+                <div class="question-group">
+                    <p>a) Não conseguiu adormecer em até 30 minutos</p>
+                    <div class="options" id="5a">
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-1-a" name="question-a" value="0" class="radio">
+                            <label for="opt-1-a" class="emoji-label">🙂</label>
+                            <label for="opt-1-a" class="text-label">Nenhuma no último mês</label>
+                        </div>
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-2-a" name="question-a" value="1" class="radio">
+                            <label for="opt-2-a" class="emoji-label">😅</label>
+                            <label for="opt-2-a" class="text-label">Menos de uma vez por semana</label>
+                        </div>
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-3-a" name="question-a" value="2" class="radio">
+                            <label for="opt-3-a" class="emoji-label">😟</label>
+                            <label for="opt-3-a" class="text-label">Uma ou duas vezes por semana</label>
+                        </div>
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-4-a" name="question-a" value="3" class="radio">
+                            <label for="opt-4-a" class="emoji-label">😣</label>
+                            <label for="opt-4-a" class="text-label">Três ou mais vezes na semana</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="question-group">
+                    <p>b) Acordou no meio da noite ou de manhã cedo</p>
+                    <div class="options" id="5b">
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-1-b" name="question-b" value="0" class="radio">
+                            <label for="opt-1-b" class="emoji-label">🙂</label>
+                            <label for="opt-1-b" class="text-label">Nenhuma no último mês</label>
+                        </div>
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-2-b" name="question-b" value="1" class="radio">
+                            <label for="opt-2-b" class="emoji-label">😅</label>
+                            <label for="opt-2-b" class="text-label">Menos de uma vez por semana</label>
+                        </div>
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-3-b" name="question-b" value="2" class="radio">
+                            <label for="opt-3-b" class="emoji-label">😟</label>
+                            <label for="opt-3-b" class="text-label">Uma ou duas vezes por semana</label>
+                        </div>
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-4-b" name="question-b" value="3" class="radio">
+                            <label for="opt-4-b" class="emoji-label">😣</label>
+                            <label for="opt-4-b" class="text-label">Três ou mais vezes na semana</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="question-group">
+                    <p>c) Precisou levantar para ir ao banheiro</p>
+                    <div class="options" id="5c">
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-1-c" name="question-c" value="0" class="radio">
+                            <label for="opt-1-c" class="emoji-label">🙂</label>
+                            <label for="opt-1-c" class="text-label">Nenhuma no último mês</label>
+                        </div>
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-2-c" name="question-c" value="1" class="radio">
+                            <label for="opt-2-c" class="emoji-label">😅</label>
+                            <label for="opt-2-c" class="text-label">Menos de uma vez por semana</label>
+                        </div>
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-3-c" name="question-c" value="2" class="radio">
+                            <label for="opt-3-c" class="emoji-label">😟</label>
+                            <label for="opt-3-c" class="text-label">Uma ou duas vezes por semana</label>
+                        </div>
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-4-c" name="question-c" value="3" class="radio">
+                            <label for="opt-4-c" class="emoji-label">😣</label>
+                            <label for="opt-4-c" class="text-label">Três ou mais vezes na semana</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="question-group">
+                    <p>d) Não conseguiu respirar confortavelmente</p>
+                    <div class="options" id="5d">
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-1-d" name="question-d" value="0" class="radio">
+                            <label for="opt-1-d" class="emoji-label">🙂</label>
+                            <label for="opt-1-d" class="text-label">Nenhuma no último mês</label>
+                        </div>
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-2-d" name="question-d" value="1" class="radio">
+                            <label for="opt-2-d" class="emoji-label">😅</label>
+                            <label for="opt-2-d" class="text-label">Menos de uma vez por semana</label>
+                        </div>
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-3-d" name="question-d" value="2" class="radio">
+                            <label for="opt-3-d" class="emoji-label">😟</label>
+                            <label for="opt-3-d" class="text-label">Uma ou duas vezes por semana</label>
+                        </div>
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-4-d" name="question-d" value="3" class="radio">
+                            <label for="opt-4-d" class="emoji-label">😣</label>
+                            <label for="opt-4-d" class="text-label">Três ou mais vezes na semana</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="question-group">
+                    <p>e) Tossiu ou roncou forte</p>
+                    <div class="options" id="5e">
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-1-e" name="question-e" value="0" class="radio">
+                            <label for="opt-1-e" class="emoji-label">🙂</label>
+                            <label for="opt-1-e" class="text-label">Nenhuma no último mês</label>
+                        </div>
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-2-e" name="question-e" value="1" class="radio">
+                            <label for="opt-2-e" class="emoji-label">😅</label>
+                            <label for="opt-2-e" class="text-label">Menos de uma vez por semana</label>
+                        </div>
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-3-e" name="question-e" value="2" class="radio">
+                            <label for="opt-3-e" class="emoji-label">😟</label>
+                            <label for="opt-3-e" class="text-label">Uma ou duas vezes por semana</label>
+                        </div>
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-4-e" name="question-e" value="3" class="radio">
+                            <label for="opt-4-e" class="emoji-label">😣</label>
+                            <label for="opt-4-e" class="text-label">Três ou mais vezes na semana</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="question-group">
+                    <p>f) Sentiu muito frio</p>
+                    <div class="options" id="5f">
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-1-f" name="question-f" value="0" class="radio">
+                            <label for="opt-1-f" class="emoji-label">🙂</label>
+                            <label for="opt-1-f" class="text-label">Nenhuma no último mês</label>
+                        </div>
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-2-f" name="question-f" value="1" class="radio">
+                            <label for="opt-2-f" class="emoji-label">😅</label>
+                            <label for="opt-2-f" class="text-label">Menos de uma vez por semana</label>
+                        </div>
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-3-f" name="question-f" value="2" class="radio">
+                            <label for="opt-3-f" class="emoji-label">😟</label>
+                            <label for="opt-3-f" class="text-label">Uma ou duas vezes por semana</label>
+                        </div>
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-4-f" name="question-f" value="3" class="radio">
+                            <label for="opt-4-f" class="emoji-label">😣</label>
+                            <label for="opt-4-f" class="text-label">Três ou mais vezes na semana</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="question-group">
+                    <p>g) Sentiu muito calor</p>
+                    <div class="options" id="5g">
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-1-g" name="question-g" value="0" class="radio">
+                            <label for="opt-1-g" class="emoji-label">🙂</label>
+                            <label for="opt-1-g" class="text-label">Nenhuma no último mês</label>
+                        </div>
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-2-g" name="question-g" value="1" class="radio">
+                            <label for="opt-2-g" class="emoji-label">😅</label>
+                            <label for="opt-2-g" class="text-label">Menos de uma vez por semana</label>
+                        </div>
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-3-g" name="question-g" value="2" class="radio">
+                            <label for="opt-3-g" class="emoji-label">😟</label>
+                            <label for="opt-3-g" class="text-label">Uma ou duas vezes por semana</label>
+                        </div>
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-4-g" name="question-g" value="3" class="radio">
+                            <label for="opt-4-g" class="emoji-label">😣</label>
+                            <label for="opt-4-g" class="text-label">Três ou mais vezes na semana</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="question-group">
+                    <p>h) Teve sonhos ruins</p>
+                    <div class="options" id="5h">
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-1-h" name="question-h" value="0" class="radio">
+                            <label for="opt-1-h" class="emoji-label">🙂</label>
+                            <label for="opt-1-h" class="text-label">Nenhuma no último mês</label>
+                        </div>
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-2-h" name="question-h" value="1" class="radio">
+                            <label for="opt-2-h" class="emoji-label">😅</label>
+                            <label for="opt-2-h" class="text-label">Menos de uma vez por semana</label>
+                        </div>
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-3-h" name="question-h" value="2" class="radio">
+                            <label for="opt-3-h" class="emoji-label">😟</label>
+                            <label for="opt-3-h" class="text-label">Uma ou duas vezes por semana</label>
+                        </div>
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-4-h" name="question-h" value="3" class="radio">
+                            <label for="opt-4-h" class="emoji-label">😣</label>
+                            <label for="opt-4-h" class="text-label">Três ou mais vezes na semana</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="question-group">
+                    <p>i) Teve dor</p>
+                    <div class="options" id="5i">
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-1-i" name="question-i" value="0" class="radio">
+                            <label for="opt-1-i" class="emoji-label">🙂</label>
+                            <label for="opt-1-i" class="text-label">Nenhuma no último mês</label>
+                        </div>
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-2-i" name="question-i" value="1" class="radio">
+                            <label for="opt-2-i" class="emoji-label">😅</label>
+                            <label for="opt-2-i" class="text-label">Menos de uma vez por semana</label>
+                        </div>
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-3-i" name="question-i" value="2" class="radio">
+                            <label for="opt-3-i" class="emoji-label">😟</label>
+                            <label for="opt-3-i" class="text-label">Uma ou duas vezes por semana</label>
+                        </div>
+                        <div class="option-wrapper">
+                            <input type="radio" id="opt-4-i" name="question-i" value="3" class="radio">
+                            <label for="opt-4-i" class="emoji-label">😣</label>
+                            <label for="opt-4-i" class="text-label">Três ou mais vezes na semana</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <div class="question" id="5j">
+                        <h1>j) Outra razão, por favor descreva:</h1>
+                        <input type="text" id="other_reason" placeholder="Razão">
+                        <p class="advise">Com que frequência, durante o último mês, você teve dificuldade para dormir devido a essa razão?</p>
+                        <div class="options">
+                            <div class="option-wrapper">
+                                <input type="radio" id="opt-1-j" name="question-j" value="0" class="radio">
+                                <label for="opt-1-j" class="emoji-label">🙂</label>
+                                <label for="opt-1-j" class="text-label">Nenhuma no último mês</label>
+                            </div>
+                            <div class="option-wrapper">
+                                <input type="radio" id="opt-2-j" name="question-j" value="1" class="radio">
+                                <label for="opt-2-j" class="emoji-label">😅</label>
+                                <label for="opt-2-j" class="text-label">Menos de uma vez por semana</label>
+                            </div>
+                            <div class="option-wrapper">
+                                <input type="radio" id="opt-3-j" name="question-j" value="2" class="radio">
+                                <label for="opt-3-j" class="emoji-label">😟</label>
+                                <label for="opt-3-j" class="text-label">Uma ou duas vezes por semana</label>
+                            </div>
+                            <div class="option-wrapper">
+                                <input type="radio" id="opt-4-j" name="question-j" value="3" class="radio">
+                                <label for="opt-4-j" class="emoji-label">😣</label>
+                                <label for="opt-4-j" class="text-label">Três ou mais vezes na semana</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        
+
+        <form id="form3" class="formulario transparent">
+
+            <div class="question">
+                <h1 class="question-title">6. Durante o último mês como você classificaria a qualidade do seu sono de uma maneira geral:</h1>
+                <div class="options" id="q6">
+                    <div class="option-wrapper">
+                        <input type="radio" id="6-a" name="question6" value="0" class="radio">
+                        <label for="6-a" class="emoji-label">🙂</label>
+                        <label for="6-a" class="text-label">Muito boa</label>
+                    </div>
+                    <div class="option-wrapper">
+                        <input type="radio" id="6-b" name="question6" value="1" class="radio">
+                        <label for="6-b" class="emoji-label">😅</label>
+                        <label for="6-b" class="text-label">Boa</label>
+                    </div>
+                    <div class="option-wrapper">
+                        <input type="radio" id="6-c" name="question6" value="2" class="radio">
+                        <label for="6-c" class="emoji-label">😟</label>
+                        <label for="6-c" class="text-label">Ruim</label>
+                    </div>
+                    <div class="option-wrapper">
+                        <input type="radio" id="6-d" name="question6" value="3" class="radio">
+                        <label for="6-d" class="emoji-label">😣</label>
+                        <label for="6-d" class="text-label">Muito ruim</label>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="question">
+                <h1 class="question-title">7. Durante o último mês, com que frequência você tomou medicamento (prescrito ou “por conta própria”) para lhe ajudar a dormir?</h1>
+                <div class="options" id="q7">
+                    <div class="option-wrapper">
+                        <input type="radio" id="7-a" name="question7" value="0" class="radio">
+                        <label for="7-a" class="emoji-label">🙂</label>
+                        <label for="7-a" class="text-label">Nenhuma no último mês</label>
+                    </div>
+                    <div class="option-wrapper">
+                        <input type="radio" id="7-b" name="question7" value="1" class="radio">
+                        <label for="7-b" class="emoji-label">😅</label>
+                        <label for="7-b" class="text-label">Menos de uma vez por semana</label>
+                    </div>
+                    <div class="option-wrapper">
+                        <input type="radio" id="7-c" name="question7" value="2" class="radio">
+                        <label for="7-c" class="emoji-label">😟</label>
+                        <label for="7-c" class="text-label">Uma ou duas vezes por semana</label>
+                    </div>
+                    <div class="option-wrapper">
+                        <input type="radio" id="7-d" name="question7" value="3" class="radio">
+                        <label for="7-d" class="emoji-label">😣</label>
+                        <label for="7-d" class="text-label">Três ou mais vezes na semana</label>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="question">
+                <h1 class="question-title">8. No último mês, que frequência você teve dificuldade para ficar acordado enquanto dirigia, comia ou participava de uma atividade social (festa, reunião de amigos, trabalho, estudo)</h1>
+                <div class="options" id="q8">
+                    <div class="option-wrapper">
+                        <input type="radio" id="8-a" name="question8" value="0" class="radio">
+                        <label for="8-a" class="emoji-label">🙂</label>
+                        <label for="8-a" class="text-label">Nenhuma no último mês</label>
+                    </div>
+                    <div class="option-wrapper">
+                        <input type="radio" id="8-b" name="question8" value="1" class="radio">
+                        <label for="8-b" class="emoji-label">😅</label>
+                        <label for="8-b" class="text-label">Menos de uma vez por semana</label>
+                    </div>
+                    <div class="option-wrapper">
+                        <input type="radio" id="8-c" name="question8" value="2" class="radio">
+                        <label for="8-c" class="emoji-label">😟</label>
+                        <label for="8-c" class="text-label">Uma ou duas vezes por semana</label>
+                    </div>
+                    <div class="option-wrapper">
+                        <input type="radio" id="8-d" name="question8" value="3" class="radio">
+                        <label for="8-d" class="emoji-label">😣</label>
+                        <label for="8-d" class="text-label">Três ou mais vezes na semana</label>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="question">
+                <h1 class="question-title">9. Durante o último mês, quão problemático foi pra você manter o entusiasmo (ânimo) para fazer as coisas (suas atividades habituais)?</h1>
+                <div class="options" id="q9">
+                    <div class="option-wrapper">
+                        <input type="radio" id="9-a" name="question9" value="0" class="radio">
+                        <label for="9-a" class="emoji-label">🙂</label>
+                        <label for="9-a" class="text-label">Nenhuma dificuldade</label>
+                    </div>
+                    <div class="option-wrapper">
+                        <input type="radio" id="9-b" name="question9" value="1" class="radio">
+                        <label for="9-b" class="emoji-label">😅</label>
+                        <label for="9-b" class="text-label">Um problema leve</label>
+                    </div>
+                    <div class="option-wrapper">
+                        <input type="radio" id="9-c" name="question9" value="2" class="radio">
+                        <label for="9-c" class="emoji-label">😟</label>
+                        <label for="9-c" class="text-label">Um problema razoável</label>
+                    </div>
+                    <div class="option-wrapper">
+                        <input type="radio" id="9-d" name="question9" value="3" class="radio">
+                        <label for="9-d" class="emoji-label">😣</label>
+                        <label for="9-d" class="text-label">Um grande problema</label>
+                    </div>
+                </div>
+            </div>
+        
+        </form>
+        
+
+    </div>
+
+    <div class="result transparent">
+        <h1>Resultado</h1>
+        <div class="form_result">
+            <h2>Seu resultado foi:</h2>
+            <h1>Bom</h1>
+            <p>😁</p>
+        </div>
+        <button class="button" id="backToMenu">
+            Voltar
+            <div class="hoverEffect">
+                <div></div>
+            </div>
+        </button>
+    </div>
+
+    <div class="history transparent">
+        <div class="line">
+            <svg viewBox="0 0 217 217" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1_3)">
+                <path d="M108.5 217C168.423 217 217 168.423 217 108.5C217 48.5771 168.423 0 108.5 0C48.5771 0 0 48.5771 0 108.5C0 168.423 48.5771 217 108.5 217Z" fill="#BB86FC"/>
+                <path d="M92.7554 96.5732V101.384L73.7993 132.094H92.9282V138H64.2349V133.362L83.2485 102.479H64.8975V96.5732H92.7554Z" fill="#C4BBBB"/>
+                <path d="M151.862 113.85V119.558L129.372 155.993H152.067V163H118.024V157.497L140.583 120.856H118.811V113.85H151.862Z" fill="#C4BBBB"/>
+                <path d="M137.424 55.7861V60.1079L120.396 87.6948H137.58V93H111.804V88.8335L128.884 61.0913H112.399V55.7861H137.424Z" fill="#C4BBBB"/>
+                <path d="M92.7554 91.5732V96.3843L73.7993 127.094H92.9282V133H64.2349V128.362L83.2485 97.479H64.8975V91.5732H92.7554Z" fill="white"/>
+                <path d="M151.862 108.85V114.558L129.372 150.993H152.067V158H118.024V152.497L140.583 115.856H118.811V108.85H151.862Z" fill="white"/>
+                <path d="M137.424 50.7861V55.1079L120.396 82.6948H137.58V88H111.804V83.8335L128.884 56.0913H112.399V50.7861H137.424Z" fill="white"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_1_3">
+                <rect width="217" height="217" fill="white"/>
+                </clipPath>
+                </defs>
+            </svg>
+            <h2>Histórico de resultados:</h2>
+        </div>
+        <canvas id="myChart"></canvas>
+        <ul>
+            <h3>Histórico de resultados</h3>
+            
+        </ul>
+        
+    </div>
+
+    <button class="button transparent" id="nextButton1">
+        Próximo
+        <div class="hoverEffect">
+            <div></div>
+        </div>
+    </button>
+
+    <button class="button transparent" id="nextButton2">
+        Próximo
+        <div class="hoverEffect">
+            <div></div>
+        </div>
+    </button>
+
+    <button class="button transparent" id="sendButton">
+        Enviar
+        <div class="hoverEffect">
+            <div></div>
+        </div>
+    </button>
+
+    <button class="button transparent" id="backToMenu1">
+        Voltar
+        <div class="hoverEffect">
+            <div></div>
+        </div>
+    </button>
+
+</body>
+</html>

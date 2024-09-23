@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-family: Roboto;
+    text-decoration: none;
+    text-align: center;
+    font-style: normal;
+    list-style: none;
+    color: white;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background-color: #141414;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    overflow: auto;
+    overflow-x: hidden;
+    gap: 3rem;
+}
+
+.title{
+    font-size: 1.44rem;
+    font-weight: 600;
+}
+
+.email{
+    width: 25%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1E1E1E;
+    border-radius: 5px;
+    padding: .8rem;
+    gap: 4rem;
+}
+
+.line{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 4rem;
+    gap: .8rem;
+}
+
+.line svg{
+    width: 50px;
+    height: 50px;
+}
+
+.line h2{
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.email-input {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    position: static;
+    max-width: 3350px;
+}
+
+.email-input .text-email {
+    font-size: 0.975rem;
+    color: #BB86FC;
+    font-weight: 700;
+    position: relative;
+    top: 0.65rem;
+    margin: 0 0 0 9.1px;
+    padding: 0 3.9px;
+    background-color: #1E1E1E;
+    width: fit-content;
+}
+
+.email-input .input-email {
+    padding: 14.3px 45px;
+    font-size: 0.975rem;
+    border: 2px #BB86FC solid;
+    border-radius: 6.5px;
+    background-color: transparent;
+}
+
+.email-input .input-email:focus {
+    outline: none;
+}
+
+.email .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 75px;
+    border: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10rem;
+    transition: all 0.02s;
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(37, 37, 37);
+    z-index: 0;
+    box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
+}
+  
+.email .button:hover {
+    background: rgb(193, 228, 248);
+    color: rgb(33, 0, 85);
+}
+  
+.email .button:active {
+    transform: scale(0.97);
+}
+  
+.email .hoverEffect {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+  
+.email .hoverEffect div {
+    background: rgb(222, 0, 75);
+    background: linear-gradient(
+      90deg,
+      rgba(222, 0, 75, 1) 0%,
+      rgba(191, 70, 255, 1) 49%,
+      rgba(0, 212, 255, 1) 100%
+    );
+    border-radius: 40rem;
+    width: 10rem;
+    height: 10rem;
+    transition: 0.4s;
+    filter: blur(20px);
+    animation: effect infinite 3s linear;
+    opacity: 0.5;
+}
+  
+.email .button:hover .hoverEffect div {
+    width: 8rem;
+    height: 8rem;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 75px;
+    border: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10rem;
+    transition: all 0.02s;
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(37, 37, 37);
+    z-index: 0;
+    box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
+}
+  
+.button:hover {
+    background: rgb(193, 228, 248);
+    color: rgb(33, 0, 85);
+}
+  
+.button:active {
+    transform: scale(0.97);
+}
+  
+.hoverEffect {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+  
+.hoverEffect div {
+    background: rgb(222, 0, 75);
+    background: linear-gradient(
+      90deg,
+      rgba(222, 0, 75, 1) 0%,
+      rgba(191, 70, 255, 1) 49%,
+      rgba(0, 212, 255, 1) 100%
+    );
+    border-radius: 40rem;
+    width: 10rem;
+    height: 10rem;
+    transition: 0.4s;
+    filter: blur(20px);
+    animation: effect infinite 3s linear;
+    opacity: 0.5;
+}
+  
+.button:hover .hoverEffect div {
+    width: 8rem;
+    height: 8rem;
+}
+
+.choices{
+    width: 25%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1E1E1E;
+    border-radius: 5px;
+    padding: .8rem;
+    gap: 4rem;
+}
+
+.choices button{
+    background-color: transparent;
+    outline: none;
+    border: .15rem solid #BB86FC;
+    border-radius: 10px;
+    width: 20rem;
+    padding: .8rem 0;
+    font-weight: 450;
+    cursor: pointer;
+}
+
+.choices button:hover{
+    transform: scale(1.01);
+    color: #BB86FC;
+    font-family: 600;
+}
+
+.advise{
+    color: #BB86FC;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.form{
+    width: 48rem;
+    height: auto;
+    padding: 1rem;
+    background-color: #1E1E1E;
+}
+
+.form h1{
+    font-size: 1.5rem;
+    font-weight: 450;
+}
+
+.advise{
+    font-size: .8rem;
+    color: #BB86FC;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.form form{
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.question{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+}
+
+.question h1, .question-title{
+    font-size: 1rem;
+    text-align: start;
+}
+
+.question input{
+    background-color: #3d3d3d;
+    border-bottom: .2rem solid #BB86FC;
+    width: 10rem;
+}
+
+#form2 .question{
+    gap: 2rem;
+}
+
+.options{
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.question-group{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: .5rem;
+}
+
+.radio{
+    display: none;
+}
+
+.option-wrapper {
+    width: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.emoji-label {
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.text-label {
+    font-size: 0.75rem; 
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.transparent{
+    display: none !important;
+}
+  
+@keyframes effect {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+}
+
+.result{
+    width: 25%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1E1E1E;
+    border-radius: 5px;
+    padding: .8rem;
+    gap: 4rem;
+}
+
+.result h1{
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.result h2{
+    font-weight: 450;
+    font-size: 1.2rem;
+}
+
+.result p{
+    font-size: 3rem;
+}
+
+.result button{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 75px;
+    border: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10rem;
+    transition: all 0.02s;
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(37, 37, 37);
+    z-index: 0;
+    box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
+}
+
+.history{
+    width: 50%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1E1E1E;
+    border-radius: 5px;
+    padding: .8rem;
+    gap: 4rem;
+}
+
+.history ul{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+}
+
+.history ul h3{
+    font-size: 1.3rem;
+}
+
+.history ul li {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    padding: 1rem 2rem;
+    background-color: #3d3d3d;
+    border-radius: 5px;
+}
+  
+
+@media screen and (max-width: 800px){
+
+    body {
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        padding: 1rem;
+    }
+
+    .email{
+        width: 95%;
+    }
+
+    .choices{
+        width: 95%;
+    }
+
+    .history{
+        width: 95%;
+    }
+
+    .history ul li{
+        width: 100%;
+        padding: .4rem .8rem;
+    }
+
+    .form{
+        width: 95%;
+    }
+
+    .result{
+        width: 95%;
+    }
+
+}
